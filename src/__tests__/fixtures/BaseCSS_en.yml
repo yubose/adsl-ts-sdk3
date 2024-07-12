@@ -1,0 +1,26 @@
+
+Style:
+  top: "0"
+  left: "0"
+  width: "1"
+  height: "1"
+  fontSize: "15"
+  textAlign:
+    x: center
+  #    y: center
+  color: "0x000000ff"
+  #  backgroundColor: "0xffffffff"
+  borderWidth: "0"
+  shadow: "false"
+
+LittleLabelStyle:
+  width: "0.9"
+  display: "block"
+  position: "static"
+  textAlign:
+    x: left
+  marginLeft: "5%"
+  marginTop: "20px"
+  fontSize: "2.1vh"
+  color: "0x2b2b2b"
+  height: "none"

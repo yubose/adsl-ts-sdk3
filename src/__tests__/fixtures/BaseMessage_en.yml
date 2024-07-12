@@ -1,0 +1,19 @@
+FirebaseToken:
+  edge:
+    .Edge: ""
+    type: 1090
+    name:
+      accessToken: ""
+      deviceType: "Android"
+    evid: ""
+    refid: ""
+  response: ""
+  edgeAPI:
+    .EdgeAPI: ""
+    store:
+      api: ce
+      dataIn: FirebaseToken.edge
+      dataOut: FirebaseToken.response
+    delete:
+      api: dx
+      dataKey: FirebaseToken.response.edge

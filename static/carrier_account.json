@@ -1,0 +1,66 @@
+[
+    {
+        "carrier": "ups",
+        "object_id": "9f5d891e8b944d6790a9cb23122b0849",
+        "object_owner": "aitmed@aitmed.com",
+        "account_id": "shippo_ups_account",
+        "parameters": {},
+        "test": false,
+        "active": true,
+        "is_shippo_account": true,
+        "metadata": "US",
+        "carrier_name": "UPS",
+        "carrier_images": [
+            null
+        ]
+    },
+    {
+        "carrier": "ups",
+        "object_id": "6876f401da5f4260b0d82c18549933bf",
+        "object_owner": "aitmed@aitmed.com",
+        "account_id": "shippo_ups_account",
+        "parameters": {},
+        "test": false,
+        "active": true,
+        "is_shippo_account": true,
+        "metadata": "CA",
+        "carrier_name": "UPS",
+        "carrier_images": [
+            null
+        ]
+    },
+    {
+        "carrier": "parcelforce",
+        "object_id": "074626ac7d9b40a29040ac34846394c9",
+        "object_owner": "master@goshippo.com",
+        "account_id": "shippo_parcelforce_account",
+        "parameters": [
+            null
+        ],
+        "test": false,
+        "active": true,
+        "is_shippo_account": true,
+        "metadata": "",
+        "carrier_name": "Parcelforce",
+        "carrier_images": [
+            null
+        ]
+    },
+    {
+        "carrier": "usps",
+        "object_id": "8139324cb23d42968fcaa61a19189d92",
+        "object_owner": "aitmed@aitmed.com",
+        "account_id": "shippo_usps_account",
+        "parameters": [
+            null
+        ],
+        "test": false,
+        "active": true,
+        "is_shippo_account": true,
+        "metadata": "",
+        "carrier_name": "USPS",
+        "carrier_images": [
+            null
+        ]
+    }
+]

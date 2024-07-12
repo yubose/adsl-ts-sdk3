@@ -1,0 +1,79 @@
+//
+// AiTmed, Inc. (c) 2019
+//
+
+syntax = "proto3";
+
+package aitmed.ecos.v1beta1;
+
+option csharp_namespace = "Aitmed.Ecos.V1Beta1";
+option go_package = "ecos/v1beta1;ecosv1beta1";
+option java_multiple_files = true;
+option java_outer_classname = "TypesProto";
+option java_package = "com.aitmed.ecos.v1beta1";
+option objc_class_prefix = "AEX";
+option php_namespace = "Aitmed\\Ecos\\V1Beta1";
+
+// Vertex is a low-level model that stores xxx.
+message Vertex {
+    int64 ctime = 1;
+    int64 mtime = 2;
+    int64 atime = 3;
+    int32 atimes =4;
+    int32 tage = 5;
+
+    bytes id = 6;
+    int32 type = 7;
+    string name = 8;
+    string deat = 9;
+
+    bytes pk = 10;
+    bytes esk = 11;
+    string uid = 12;
+    int32 subtype = 13;
+}
+
+// Edge is a low-level model that stores xxx.
+message Edge {
+    int64 ctime = 1;
+    int64 mtime = 2;
+    int64 atime = 3;
+    int32 atimes =4;
+    int32 tage = 5;
+
+    bytes id = 6;
+    int32 type = 7;
+    string name = 8;
+    string deat = 9;
+
+    int32 subtype = 10;
+    bytes bvid = 11;
+    bytes evid = 12;
+    int64 stime = 13;
+    int64 etime = 14;
+    bytes refid = 15;
+    bytes besak = 16;
+    bytes eesak = 17;
+    bytes sig = 18;
+}
+
+// Doc is a low-level model that stores xxx.
+message Doc {
+    int64 ctime = 1;
+    int64 mtime = 2;
+    int64 atime = 3;
+    int32 atimes =4;
+    int32 tage = 5;
+
+    bytes id = 6;
+    int32 type = 7;
+    string name = 8;
+    string deat = 9;
+
+    int32 size = 10;
+    bytes fid = 11;
+    bytes eid = 12;
+    bytes ovid = 13;
+    bytes reid = 14;
+    int32 subtype = 15;
+}

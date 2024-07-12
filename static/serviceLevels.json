@@ -1,0 +1,196 @@
+{
+  "USPS": [
+    {
+      "token": "usps_priority",
+      "serviceName": "Priority Mail"
+    },
+    {
+      "token": "usps_priority_express",
+      "serviceName": "Priority Mail Express"
+    },
+    {
+      "token": "usps_media_mail",
+      "serviceName": "Media Mail, only for existing Shippo customers with grandfathered Media Mail option."
+    },
+    {
+      "token": "usps_priority_mail_international",
+      "serviceName": "Priority Mail International"
+    },
+    {
+      "token": "usps_priority_mail_express_international",
+      "serviceName": "Priority Mail Express International"
+    },
+    {
+      "token": "usps_first_class_package_international_service",
+      "serviceName": "First Class Package International"
+    },
+    {
+      "token": "usps_ground_advantage",
+      "serviceName": "Ground Advantage"
+    }
+  ],
+  "FedEx": [
+    {
+      "token": "fedex_ground",
+      "serviceName": "FedEx Ground®"
+    },
+    {
+      "token": "fedex_home_delivery",
+      "serviceName": "FedEx Home Delivery®"
+    },
+    {
+      "token": "fedex_ground_economy",
+      "serviceName": "FedEx Ground® Economy"
+    },
+    {
+      "token": "fedex_2_day",
+      "serviceName": "FedEx 2Day®"
+    },
+    {
+      "token": "fedex_2_day_am",
+      "serviceName": "FedEx 2Day® A.M."
+    },
+    {
+      "token": "fedex_express_saver",
+      "serviceName": "FedEx Express Saver®"
+    },
+    {
+      "token": "fedex_standard_overnight",
+      "serviceName": "FedEx Standard Overnight®"
+    },
+    {
+      "token": "fedex_priority_overnight",
+      "serviceName": "FedEx Priority Overnight®"
+    },
+    {
+      "token": "fedex_first_overnight",
+      "serviceName": "FedEx First Overnight®"
+    },
+    {
+      "token": "fedex_freight_priority",
+      "serviceName": "FedEx Freight® Priority"
+    },
+    {
+      "token": "fedex_next_day_freight",
+      "serviceName": "FedEx Next Day Freight"
+    },
+    {
+      "token": "fedex_freight_economy",
+      "serviceName": "FedEx Freight® Economy"
+    },
+    {
+      "token": "fedex_first_freight",
+      "serviceName": "FedEx First Freight"
+    },
+    {
+      "token": "fedex_international_economy",
+      "serviceName": "FedEx International Economy®"
+    },
+    {
+      "token": "fedex_international_priority",
+      "serviceName": "FedEx International Priority®"
+    },
+    {
+      "token": "fedex_international_first",
+      "serviceName": "FedEx International First®"
+    },
+    {
+      "token": "fedex_europe_first_international_priority",
+      "serviceName": "FedEx International First®"
+    },
+    {
+      "token": "fedex_international_connect_plus",
+      "serviceName": "FedEx International Connect Plus"
+    },
+    {
+      "token": "international_economy_freight",
+      "serviceName": "FedEx International Economy® Freight"
+    },
+    {
+      "token": "international_priority_freight",
+      "serviceName": "FedEx International Priority® Freight"
+    }
+  ],
+  "UPS": [
+    {
+      "token": "ups_standard",
+      "serviceName": "Standard℠"
+    },
+    {
+      "token": "ups_ground",
+      "serviceName": "Ground"
+    },
+    {
+      "token": "ups_saver",
+      "serviceName": "Saver®"
+    },
+    {
+      "token": "ups_3_day_select",
+      "serviceName": "3 Day Select®"
+    },
+    {
+      "token": "ups_second_day_air",
+      "serviceName": "2nd Day Air®"
+    },
+    {
+      "token": "ups_second_day_air_am",
+      "serviceName": "2nd Day Air® A.M."
+    },
+    {
+      "token": "ups_next_day_air",
+      "serviceName": "Next Day Air®"
+    },
+    {
+      "token": "ups_next_day_air_saver",
+      "serviceName": "Next Day Air Saver®"
+    },
+    {
+      "token": "ups_next_day_air_early_am",
+      "serviceName": "Next Day Air® Early"
+    },
+    {
+      "token": "ups_mail_innovations_domestic",
+      "serviceName": "Mail Innovations (domestic)"
+    },
+    {
+      "token": "ups_surepost",
+      "serviceName": "Surepost"
+    },
+    {
+      "token": "ups_surepost_bound_printed_matter",
+      "serviceName": "SurePost® Bound Printed Matter"
+    },
+    {
+      "token": "ups_surepost_lightweight",
+      "serviceName": "Surepost Lightweight"
+    },
+    {
+      "token": "ups_surepost_media",
+      "serviceName": "SurePost® Media"
+    },
+    {
+      "token": "ups_express",
+      "serviceName": "Express®"
+    },
+    {
+      "token": "ups_express_1200",
+      "serviceName": "Express 12:00"
+    },
+    {
+      "token": "ups_express_plus",
+      "serviceName": "Express Plus®"
+    },
+    {
+      "token": "ups_expedited",
+      "serviceName": "Expedited®"
+    },
+    {
+      "token": "ups_express_early",
+      "serviceName": "Express® Early"
+    },
+    {
+      "token": "ups_access_point_economy",
+      "serviceName": "Access Point™ Economy"
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "USPS": [
+    {
+      "token": "USPS_FlatRateCardboardEnvelope",
+      "name": "Flat Rate Cardboard Envelope",
+      "dimensions": "12.50 x 9.50 x 0.75 in"
+    },
+    {
+      "token": "USPS_FlatRateEnvelope",
+      "name": "Flat Rate Envelope",
+      "dimensions": "12.50 x 9.50 x 0.75 in"
+    },
+    {
+      "token": "USPS_FlatRateGiftCardEnvelope",
+      "name": "Flat Rate Gift Card Envelope",
+      "dimensions": "10.00 x 7.00 x 0.75 in"
+    },
+    {
+      "token": "USPS_FlatRateLegalEnvelope",
+      "name": "Flat Rate Legal Envelope",
+      "dimensions": "15.00 x 9.50 x 0.75 in"
+    },
+    {
+      "token": "USPS_FlatRatePaddedEnvelope",
+      "name": "Flat Rate Padded Envelope",
+      "dimensions": "12.50 x 9.50 x 1.00 in"
+    },
+    {
+      "token": "USPS_FlatRateWindowEnvelope",
+      "name": "Flat Rate Window Envelope",
+      "dimensions": "10.00 x 5.00 x 0.75 in"
+    },
+    {
+      "token": "USPS_IrregularParcel",
+      "name": "Irregular Parcel",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "USPS_LargeFlatRateBoardGameBox",
+      "name": "Large Flat Rate Board Game Box",
+      "dimensions": "24.06 x 11.88 x 3.13 in"
+    },
+    {
+      "token": "USPS_LargeFlatRateBox",
+      "name": "Large Flat Rate Box",
+      "dimensions": "12.25 x 12.25 x 6.00 in"
+    },
+    {
+      "token": "USPS_APOFlatRateBox",
+      "name": "APO/FPO/DPO Large Flat Rate Box",
+      "dimensions": "12.25 x 12.25 x 6.00 in"
+    },
+    {
+      "token": "USPS_LargeVideoFlatRateBox",
+      "name": "Flat Rate Large Video Box (Int'l only)",
+      "dimensions": "9.60 x 6.40 x 2.20 in"
+    },
+    {
+      "token": "USPS_MediumFlatRateBox1",
+      "name": "Medium Flat Rate Box 1",
+      "dimensions": "11.25 x 8.75 x 6.00 in"
+    },
+    {
+      "token": "USPS_MediumFlatRateBox2",
+      "name": "Medium Flat Rate Box 2",
+      "dimensions": "14.00 x 12.00 x 3.50 in"
+    },
+    {
+      "token": "USPS_RegionalRateBoxA1",
+      "name": "Regional Rate Box A1",
+      "dimensions": "10.13 x 7.13 x 5.00 in"
+    },
+    {
+      "token": "USPS_RegionalRateBoxA2",
+      "name": "Regional Rate Box A2",
+      "dimensions": "13.06 x 11.06 x 2.50 in"
+    },
+    {
+      "token": "USPS_RegionalRateBoxB1",
+      "name": "Regional Rate Box B1",
+      "dimensions": "12.25 x 10.50 x 5.50 in"
+    },
+    {
+      "token": "USPS_RegionalRateBoxB2",
+      "name": "Regional Rate Box B2",
+      "dimensions": "16.25 x 14.50 x 3.00 in"
+    },
+    {
+      "token": "USPS_SmallFlatRateBox",
+      "name": "Small Flat Rate Box",
+      "dimensions": "8.69 x 5.44 x 1.75 in"
+    },
+    {
+      "token": "USPS_SmallFlatRateEnvelope",
+      "name": "Small Flat Rate Envelope",
+      "dimensions": "10.00 x 6.00 x 4.00 in"
+    },
+    {
+      "token": "USPS_SoftPack",
+      "name": "Soft Pack Padded Envelope",
+      "dimensions": "Length and width defined in the Parcel"
+    }
+  ],
+  "FedEx": [
+    {
+      "token": "FedEx_Box_10kg",
+      "name": "FedEx® 10kg Box",
+      "dimensions": "15.81 x 12.94 x 10.19 in"
+    },
+    {
+      "token": "FedEx_Box_25kg",
+      "name": "FedEx® 25kg Box",
+      "dimensions": "54.80 x 42.10 x 33.50 in"
+    },
+    {
+      "token": "FedEx_Box_Extra_Large_1",
+      "name": "FedEx® Extra Large Box (X1)",
+      "dimensions": "11.88 x 11.00 x 10.75 in"
+    },
+    {
+      "token": "FedEx_Box_Extra_Large_2",
+      "name": "FedEx® Extra Large Box (X2)",
+      "dimensions": "15.75 x 14.13 x 6.00 in"
+    },
+    {
+      "token": "FedEx_Box_Large_1",
+      "name": "FedEx® Large Box (L1)",
+      "dimensions": "17.50 x 12.38 x 3.00 in"
+    },
+    {
+      "token": "FedEx_Box_Large_2",
+      "name": "FedEx® Large Box (L2)",
+      "dimensions": "11.25 x 8.75 x 7.75 in"
+    },
+    {
+      "token": "FedEx_Box_Medium_1",
+      "name": "FedEx® Medium Box (M1)",
+      "dimensions": "13.25 x 11.50 x 2.38 in"
+    },
+    {
+      "token": "FedEx_Box_Medium_2",
+      "name": "FedEx® Medium Box (M2)",
+      "dimensions": "11.25 x 8.75 x 4.38 in"
+    },
+    {
+      "token": "FedEx_Box_Small_1",
+      "name": "FedEx® Small Box (S1)",
+      "dimensions": "12.38 x 10.88 x 1.50 in"
+    },
+    {
+      "token": "FedEx_Box_Small_2",
+      "name": "FedEx® Small Box (S2)",
+      "dimensions": "11.25 x 8.75 x 4.38 in"
+    },
+    {
+      "token": "FedEx_Envelope",
+      "name": "FedEx® Envelope",
+      "dimensions": "12.50 x 9.50 x 0.80 in"
+    },
+    {
+      "token": "FedEx_Padded_Pak",
+      "name": "FedEx® Padded Pak",
+      "dimensions": "11.75 x 14.75 x 2.00 in"
+    },
+    {
+      "token": "FedEx_Pak_1",
+      "name": "FedEx® Large Pak",
+      "dimensions": "15.50 x 12.00 x 0.80 in"
+    },
+    {
+      "token": "FedEx_Pak_2",
+      "name": "FedEx® Small Pak",
+      "dimensions": "12.75 x 10.25 x 0.80 in"
+    },
+    {
+      "token": "FedEx_Tube",
+      "name": "FedEx® Tube",
+      "dimensions": "38.00 x 6.00 x 6.00 in"
+    },
+    {
+      "token": "FedEx_XL_Pak",
+      "name": "FedEx® Extra Large Pak",
+      "dimensions": "17.50 x 20.75 x 2.00 in"
+    }
+  ],
+  "UPS": [
+    {
+      "token": "UPS_Box_10kg",
+      "name": "Box 10kg",
+      "dimensions": "410.00 x 335.00 x 265.00 mm"
+    },
+    {
+      "token": "UPS_Box_25kg",
+      "name": "Box 25kg",
+      "dimensions": "484.00 x 433.00 x 350.00 mm"
+    },
+    {
+      "token": "UPS_Express_Box",
+      "name": "Express Box",
+      "dimensions": "460.00 x 315.00 x 95.00 mm"
+    },
+    {
+      "token": "UPS_Express_Box_Large",
+      "name": "Express Box Large",
+      "dimensions": "18.00 x 13.00 x 3.00 in"
+    },
+    {
+      "token": "UPS_Express_Box_Medium",
+      "name": "Express Box Medium",
+      "dimensions": "15.00 x 11.00 x 3.00 in"
+    },
+    {
+      "token": "UPS_Express_Box_Small",
+      "name": "Express Box Small",
+      "dimensions": "13.00 x 11.00 x 2.00 in"
+    },
+    {
+      "token": "UPS_Express_Envelope",
+      "name": "Express Envelope",
+      "dimensions": "12.50 x 9.50 x 2.00 in"
+    },
+    {
+      "token": "UPS_Express_Hard_Pak",
+      "name": "Express Hard Pak",
+      "dimensions": "14.75 x 11.50 x 2.00 in"
+    },
+    {
+      "token": "UPS_Express_Legal_Envelope",
+      "name": "Express Legal Envelope",
+      "dimensions": "15.00 x 9.50 x 2.00 in"
+    },
+    {
+      "token": "UPS_Express_Pak",
+      "name": "Express Pak",
+      "dimensions": "16.00 x 12.75 x 2.00 in"
+    },
+    {
+      "token": "UPS_Express_Tube",
+      "name": "Express Tube",
+      "dimensions": "970.00 x 190.00 x 165.00 mm"
+    },
+    {
+      "token": "UPS_Laboratory_Pak",
+      "name": "Laboratory Pak",
+      "dimensions": "17.25 x 12.75 x 2.00 in"
+    },
+    {
+      "token": "UPS_MI_BPM",
+      "name": "BPM (Mail Innovations - Domestic & International)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_BPM_Flat",
+      "name": "BPM Flat (Mail Innovations - Domestic & International)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_BPM_Parcel",
+      "name": "BPM Parcel (Mail Innovations - Domestic & International)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_First_Class",
+      "name": "First Class (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Flat",
+      "name": "Flat (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Irregular",
+      "name": "Irregular (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Machinable",
+      "name": "Machinable (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_MEDIA_MAIL",
+      "name": "Media Mail (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Parcel_Post",
+      "name": "Parcel Post (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Priority",
+      "name": "Priority (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_MI_Standard_Flat",
+      "name": "Standard Flat (Mail Innovations - Domestic only)",
+      "dimensions": "0.00 x 0.00 x 0.00 in"
+    },
+    {
+      "token": "UPS_Pad_Pak",
+      "name": "Pad Pak",
+      "dimensions": "14.75 x 11.00 x 2.00 in"
+    },
+    {
+      "token": "UPS_Pallet",
+      "name": "Pallet",
+      "dimensions": "120.00 x 80.00 x 200.00 cm"
+    }
+  ]
+}

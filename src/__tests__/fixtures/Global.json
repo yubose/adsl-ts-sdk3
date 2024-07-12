@@ -1,0 +1,121 @@
+{
+  "DocChat": {
+    "document": ""
+  },
+  "DocProfile": {
+    "document": ""
+  },
+  "DocReference": {
+    "document": ""
+  },
+  "VideoChatObjStore": {
+    "reference": {
+      "edge": ""
+    }
+  },
+  "_nonce": 0.7139930373752115,
+  "actingUser": {
+    "DataCache": {
+      "expireTime": "2hr"
+    },
+    "vertex": {
+      ".EcosObj": "",
+      "deat": "",
+      "esk": "",
+      "pk": "",
+      "uid": ""
+    }
+  },
+  "contact": {
+    "document": {
+      "name": {
+        "data": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": ""
+        }
+      }
+    }
+  },
+  "currentDateTime": 1641686340521,
+  "currentUser": {
+    "JWT": "XVGuMgAAAABLmgJCrBIABQ==",
+    "dataCache": {
+      ".DataCache": "",
+      "expireTime": "2hr",
+      "loadingDateTime": 1641686340521
+    },
+    "response": null,
+    "vertex": {
+      ".Vertex": "",
+      "atime": 1637790350,
+      "atimes": 5,
+      "ctime": 1596734376,
+      "deat": {
+        "oldpwdsig": null,
+        "rnb64ID": "vP4mkyGpT3GTl6mgWKDuyQ=="
+      },
+      "esk": "C7XdU2pe8bEVEY8zsvkU3IePLVQlDKK56sgmSqumO29QzNbtpGid8Es4PJHFbkllxCpNExffm+c3msn8Ab+xMeATgT0ohtD1",
+      "id": "R497epiwTUcRDlxYldlYQw==",
+      "mtime": 1637790350,
+      "name": {
+        "firstName": "John",
+        "fullName": "John Smith",
+        "lastName": "Smith",
+        "userName": "NoName"
+      },
+      "pk": "9PFeLcwys0vBalKYf0HluOpQ7BrmGx9bNiDbJpO3FWc=",
+      "sk": "C6T3rc9hMVcgEGGNoL3dofTIjD2JmJp/ayS4QKrrnRQ=",
+      "tage": 522045,
+      "type": 1,
+      "uid": "+1 8882465555"
+    },
+    "vertexAPI": {
+      ".VertexAPI": "",
+      "store": {
+        "api": "cv",
+        "dataIn": "Global.currentUser.vertex",
+        "dataOut": "Global.currentUser.response"
+      }
+    }
+  },
+  "ecosDocObj": "",
+  "email": {
+    "document": "",
+    "id": ""
+  },
+  "helperUser": {
+    "vertex": ""
+  },
+  "inboxContact": "",
+  "newAccountFlag": "1",
+  "phoneNumber": "8882465555",
+  "popUpMessage": "",
+  "profile": {
+    "document": ""
+  },
+  "rootNotebookID": "vP4mkyGpT3GTl6mgWKDuyQ==",
+  "rootRoomInfo": {
+    "edge": {
+      ".Edge": "",
+      "bvid": "R497epiwTUcRDlxYldlYQw==",
+      "name": {
+        "title": "New room",
+        "videoProvider": ""
+      },
+      "type": 40000
+    },
+    "edgeAPI": {
+      ".EdgeAPI": "",
+      "store": {
+        "api": "ce",
+        "dataKey": "Global.rootRoomInfo.edge"
+      }
+    },
+    "response": ""
+  },
+  "timeScondition": "",
+  "timer": 0,
+  "token": "",
+  "version": "0.78d"
+}

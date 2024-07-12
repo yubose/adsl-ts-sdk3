@@ -1,0 +1,630 @@
+ChatPage:
+  title: ""
+  init:
+    - .SignInCheck: ""
+    - .Global.currentPageName@: "ChatPage"
+    - ..title@: "=.Global.messageObjStore.currentChatEdge.edge.name.roomName"
+    - ..chatEdge@: "=.Global.messageObjStore.currentChatEdge.edge"
+    - =..messages.docApi.get: ''
+    - ..newestMsg@: "=..messages.response.doc.0"
+    - ..oldestMsg@: "=..messages.response.doc.$"
+    - ..participants.docAPI.get: ""
+    - .Global.currentPageName@: "ChatPage"
+    # - ..newRoomInfo.edgeAPI.store: ""
+    # - .Global.rootRoomInfo.store: ""
+  participants:
+    participantList:
+      edge: ""
+      doc:
+        - name:
+            data:
+              fullName: ""
+    docAPI:
+      get:
+        api: rd
+        type: .DocType.DoctorProfile
+        xfname: E.refid
+        id: .Global.messageObjStore.currentChatEdge.edge.refid
+        ObjType: 12
+        dataKey: participants.participantList
+        sCondition: E.type=40000
+        maxcount: 50
+       # obfname: ctime
+#  sendNotification:
+#    document:
+#      .Document: ""
+#      eid: ""
+#      reid: ""
+#      subtype:
+#        isOnServer: 1
+#        isZipped: 0
+#        isBinary: 0
+#        isEncrypted: 0
+#        isExtraKeyNeeded: 0
+#        isEditable: 0
+#        applicationDataType: 0
+#        # 7 th bit
+#        notification: 1
+#        ringToneNotify: 1
+#        sendtoSelf: 0
+#        # 10 bit
+#        textMessage: 0
+#        mediaType: 8
+#      type: .DocType.FCMNotification
+#      name:
+#        data: ""
+#        #        senderId: ".Global.currentUser.vertex.id"
+#        #        senderName: ".Global.currentUser.vertex.name.userName"
+#        #        data:
+#        #          text: ''
+#        notification:
+##          title: AitMed Connection Rejected
+##          context: Connection request rejected
+#          landingPage: RingTonePage
+#          targetApp: =.FirebaseToken.response.edge.evid
+#    docAPI:
+#      store:
+#        api: cd
+#        dataIn: sendNotification.document
+  chatEdge: ''  # if group chat, is the root edge
+  newestMsg: ''
+  oldestMsg: ''
+  textEmpty: true
+  textNotEmpty: false
+  preTextEmpty: true
+  messages:
+    response: ''
+    document:
+      id: "=..chatEdge.refid"
+      xfname: reid
+      obfname: ctime
+      ObjType: 0
+      maxcount: 10
+    docApi:
+      get:
+        api: rd
+        dataOut: messages.response
+        dataIn: messages.document
+  newVideoMessage:
+    response: ""
+    document:
+      eid: "=..chatEdge.id"
+      reid: "=..chatEdge.refid"
+      subtype:
+        isOnServer: 1
+        isZipped: 0
+        isBinary: 0
+        isEncrypted: 0
+        isExtraKeyNeeded: 0
+        isEditable: 0
+        # get video room from document deat
+        applicationDataType: 8
+        # 7 th bit
+        notification: 1
+        ringToneNotify: 1
+        sendtoSelf: 0
+        # 10 bit
+        textMessage: 0
+        mediaType: 8
+      type: 770
+      name:
+        title: textMessage
+        senderId: ".Global.currentUser.vertex.id"
+        senderName: ".Global.currentUser.vertex.name.userName"
+        data:
+          text: ''
+        notification:
+          title: New Message From a Doctor
+          context: click to open the chat page
+          landingPage: RingTonePage
+          onClickLandingPage: ChatPage
+          targetApp: =.FirebaseToken.response.edge.evid
+    docAPI:
+      store:
+        api: cd
+        dataIn: newVideoMessage.document
+        dataOut: newVideoMessage.response
+  newTextMessage:
+    document:
+      eid: "=..chatEdge.id"
+      reid: "=..chatEdge.refid"
+      subtype:
+        isOnServer: 1
+        isZipped: 0
+        isBinary: 0
+        isEncrypted: 0
+        isExtraKeyNeeded: 0
+        isEditable: 0
+        applicationDataType: 0
+        # 7 th bit
+        notification: 1
+        ringToneNotify: 0
+        sendtoSelf: 0
+        # 10 bit
+        textMessage: 0
+        mediaType: 8
+      type: 769
+      name:
+        title: textMessage
+        senderId: ".Global.currentUser.vertex.id"
+        senderName: ".Global.currentUser.vertex.name.userName"
+        data:
+          text: ''
+        notification:
+          title: New Message From a Doctor
+          context: click to open the chat page
+          onClickLandingPage: ChatPage
+          targetApp: =.FirebaseToken.response.edge.evid
+    docAPI:
+      store:
+        api: cd
+        dataIn: newTextMessage.document
+  newFileMessage:
+    document:
+      eid: "=..chatEdge.id"
+      reid: "=..chatEdge.refid"
+      subtype:
+        isOnServer: 0
+        isZipped: 0
+        isBinary: 0
+        isEncrypted: 0
+        isExtraKeyNeeded: 0
+        isEditable: 0
+        applicationDataType: 0
+        mediaType: 4
+      type: 1025
+      name:
+        title: fileMessage
+        senderName: ".Global.currentUser.vertex.name.userName"
+        data:
+          text: ''
+    docAPI:
+      store:
+        api: cd
+        dataKey: newFileMessage.document
+  newMessages:
+    response:
+      doc: []
+    document:
+      "..messages.document": ''
+      sCondition: ''
+      _nonce: "=.Global._nonce"
+    docApi:
+      get:
+        api: rd
+        dataIn: newMessages.document
+        dataOut: newMessages.response
+  oldMessages:
+    response: ''
+    document:
+      "..messages.document": ''
+      sCondition: ''
+    docApi:
+      get:
+        api: rd
+        dataIn: oldMessages.document
+        dataOut: oldMessages.response
+  onNewMessageToDisplay:
+    actionType: evalObject
+    object:
+      - "=.builtIn.string.concat":
+          dataIn:
+            - ctime>
+            - "=..newestMsg.ctime"
+          dataOut: ChatPage.newMessages.document.sCondition
+      - ".Global._nonce@":
+          "=.builtIn.math.random": ''
+      - "=..newMessages.docApi.get": ''
+      - "..newestMsg@": "=..newMessages.response.doc.0"
+      - actionType: builtIn
+        funcName: insertTo
+        viewTag: chatTag
+        newItems: newMessages.response.doc
+  onPullMoreMessage:
+    actionType: evalObject
+    object:
+      - "=.builtIn.string.concat":
+          dataIn:
+            - ctime<
+            - "=..oldestMsg.ctime"
+          dataOut: oldMessages.document.sCondition
+      - "=..oldMessages.docApi.get": ''
+      - "..oldestMsg@": "=..oldMessages.response.doc.$"
+      - actionType: builtIn
+        funcName: insertTo
+        viewTag: chatTag
+        newItems: oldMessages.response.doc
+        addToFront: false
+  addTag: true     
+  additionalList: 
+    - image: photo.svg
+      text: Photo
+    - image: camera.svg
+      text: Camera
+    - image: videocall.svg
+      text: Video call
+    - image: d2dCall.svg
+      text: Call
+    - image: d2dDocument.svg
+      text: Document
+    # - image: patientInfo.svg
+    #   text: Patient info
+    - image: medicalForms.svg
+      text: Provider Notes
+             
+  components:
+    - .BaseHeader:
+    - .HeaderLeftButton:
+    - type: image
+      path: sideNav.svg
+      style:
+        top: "0.042"
+        height: "0.02"
+        left: "0.88"
+        zIndex: 10000
+      onClick:
+        - goto: MeetingInfo
+    - type: register
+      onEvent: onNewMessageDisplay
+      emit:
+        dataKey:
+          var: onNewMessageDisplay
+        actions:
+          - "=..onNewMessageToDisplay"
+    - type: register
+      onEvent: onPullMoreMessage
+      emit:
+        dataKey:
+          var: onPullMoreMessage
+        actions:
+          - "=..onPullMoreMessage"
+    - type: view
+      style:
+        marginTop: "0.1"
+        width: '1'
+        height: '0.9'
+      children:
+        - type: view
+          viewTag: chatOne            
+          style:
+            height: '0.84'
+            width: '1'
+          children:
+            - type: chatList
+              viewTag: chatTag
+              contentType: listObject
+              listObject: "..messages.response.doc"
+              iteratorVar: itemObject
+              style:
+                width: '1'
+                height: '0.84'
+        - type: view
+          viewTag: chatTwo
+          style:
+            height: '0.54'
+            width: '1'
+            display: none
+          children:
+            - type: chatList
+              viewTag: chatTag
+              contentType: listObject
+              listObject: "..messages.response.doc"
+              iteratorVar: itemObject
+              style:
+                width: '1'
+                height: '0.54'
+        - type: view
+          viewTag: botBar
+          style:
+            width: '1'
+            height: '0.06'
+            backgroundColor: "0xFAFAFAEF"
+          children:
+            # - type: image
+            #   path: dictation.svg 
+            #   style:
+            #     display: "inline-block"
+            #     verticalAlign: "middle"
+            #     marginLeft: "0.02"
+            #     height: "0.04"
+            - type: image
+              path: addPlus.svg
+              viewTag: addPlus
+              style:
+                #isHidden: ..textEmpty
+                display: "inline-block"
+                marginLeft: "0.04"
+                verticalAlign: "middle"  
+                height: "0.03"
+              onClick:
+                - actionType: evalObject
+                  object:
+                    - if:
+                      - ..addTag                  
+                      - actionType: evalObject
+                        object:
+                          # - ..addTag@: false
+                          - actionType: builtIn
+                            funcName: show
+                            viewTag: additionalListTag     
+                      - actionType: evalObject
+                        object:
+                          # - ..addTag@: true
+                          - actionType: builtIn
+                            funcName: hide
+                            viewTag: additionalListTag 
+                - actionType: evalObject
+                  object:                                
+                    - if:
+                      - ..addTag                  
+                      - actionType: evalObject
+                        object:
+                          # - ..addTag@: false
+                          - actionType: builtIn
+                            funcName: hide
+                            viewTag: chatOne         
+                      - actionType: evalObject
+                        object:
+                          # - ..addTag@: true
+                          - actionType: builtIn
+                            funcName: show
+                            viewTag: chatOne                             
+                - actionType: evalObject
+                  object:                            
+                    - if:
+                      - ..addTag                  
+                      - actionType: evalObject
+                        object:
+                          - ..addTag@: false
+                          - actionType: builtIn
+                            funcName: show
+                            viewTag: chatTwo          
+                      - actionType: evalObject
+                        object:
+                          - ..addTag@: true
+                          - actionType: builtIn
+                            funcName: hide
+                            viewTag: chatTwo
+            - type: textField
+              placeholder: Text
+              viewTag: textInput
+              dataKey: newTextMessage.document.name.data.text
+              style:
+                display: "inline-block"
+                marginTop: "0.005"
+                height: "0.05"
+                width: "0.75"
+                marginLeft: "0.02"
+                borderRadius: "50"
+                borderColor: "0xC8C8CC"
+                borderWidth: "1"
+                verticalAlign: "middle"
+                textIndent: "4vw"
+                border:
+                  style: 3
+                  width: "1"
+            - type: image
+              path: send.png
+              viewTag: sendButton
+              onClick:
+                - actionType: evalObject
+                  object:
+                    - "=..newTextMessage.docAPI.store": ''
+                    - "..newTextMessage.document.name.data.text@": ''
+                    - "=.builtIn.object.clear":
+                        dataIn:
+                          object: "=..newTextMessage.document.name.data.text"
+                - "=..onNewMessageToDisplay"
+                - actionType: builtIn
+                  funcName: clearText
+                  viewTag: textInput
+              style:
+                #isHidden: ..textEmpty
+                display: "inline-block"
+                marginLeft: "0.02"
+                verticalAlign: "middle"  
+                height: "0.03"
+        - type: view
+          viewTag: additionalListTag
+          style:
+            height: "0.3"
+            display: none
+            backgroundColor: "0xD8D9DD" 
+          children:
+            - type: list
+              androidGrid: true
+              contentType: listObject
+              listObject: ..additionalList
+              iteratorVar: itemObject
+              style:
+                width: '0.98'
+                margin: '0'
+                marginLeft: '0.02'
+                height: "0.3"
+              children:
+                - type: listItem
+                  itemObject: 
+                  style:
+                    width: '0.24'
+                    height: '0.14'
+                    left: '0'
+                    display: "inline-block"
+                  children:
+                    - type: view
+                      onClick:
+                        - emit:
+                            dataKey:
+                              var: itemObject
+                            actions:
+                              # check if clicked the photo button
+                              - if:
+                                - =.builtIn.string.equal:
+                                    dataIn:
+                                      string1: Photo 
+                                      string2: $var.text
+                                - actionType: evalObject
+                                  object:
+                                    - actionType: openPhotoLibrary
+                                      dataObject: BLOB
+                                      title: newFileMessage.document.name.title
+                                      dataKey: newFileMessage.document.name.data
+                                    - =..newFileMessage.docAPI.store: ""
+                                    - =..onNewMessageToDisplay: ""    
+                                - continue
+                              - if:
+                                - =.builtIn.string.equal:
+                                    dataIn:
+                                      string1: Video call
+                                      string2: $var.text
+                                - actionType: evalObject
+                                  object:
+                                    - =..newVideoMessage.docAPI.store: ""
+                                    - .Global.messageObjStore.currentVideoDoc @: =..newVideoMessage.response.doc
+                                    - .Global.messageObjStore.currentChatEdge.edge.deat@: =..newVideoMessage.response.doc.deat
+                                    - .Global.roomInfo.edge@: =.Global.messageObjStore.currentChatEdge.edge
+                                    - goto: VideoChat2
+                                - continue
+                              - if:
+                                - =.builtIn.string.equal:
+                                    dataIn:
+                                      string1: Camera
+                                      string2: $var.text
+                                - actionType: evalObject
+                                  object:
+                                    - actionType: openCamera
+                                      dataObject: BLOB
+                                      dataKey: newFileMessage.document.name.data
+                                    - =..newFileMessage.docAPI.store: ""
+                                    - =..onNewMessageToDisplay: ""
+                                - continue
+                              - if:
+                                - =.builtIn.string.equal:
+                                    dataIn:
+                                      string1: Document
+                                      string2: $var.text
+                                - actionType: evalObject
+                                  object:
+                                    - actionType: openDocumentManager
+                                      dataObject: BLOB
+                                      dataKey: newFileMessage.document.name.data
+                                      title: newFileMessage.document.name.title
+                                    - =..newFileMessage.docAPI.store: ""
+                                    - =..onNewMessageToDisplay: ""
+                                - continue
+                              - if:
+                                - =.builtIn.string.equal:
+                                    dataIn:
+                                      string1: Provider Notes
+                                      string2: $var.text
+                                - actionType: evalObject
+                                  object:
+                                    # - =..newFileMessage.docAPI.store: ""
+                                    # - =..onNewMessageToDisplay: ""
+                                    - .Global.roomInfo.edge@: =.Global.messageObjStore.currentChatEdge.edge
+                                    - goto: ProviderNoteSelect
+                                - continue
+                      style: 
+                        height: "20vw"
+                        width: "0.20"
+                        marginTop: "0.02"
+                        marginLeft: '0.02'
+                        backgroundColor: "0xffffff"
+                        borderRadius: '5vw'
+                        textAlign:
+                          y: center
+                          x: center
+                      children:
+                        - type: image
+                          #path: itemObject.image #Android hasn't finished this function yet. We'll implement it tomorrow
+                          path:
+                            emit:
+                              dataKey:
+                                var: itemObject
+                              actions:                        
+                                - if:
+                                  - true
+                                  - $var.image
+                                  - $var.image
+                          style:
+                            width: "0.10"
+                            height: '0.10'
+                    - type: label
+                      dataKey: itemObject.text
+                      style:
+                        marginTop: '0.01'
+                        width: "0.24"
+                        fontSize: .Nfont.h1
+                        textAlign:
+                          x: center
+                                
+        # - type: textField
+        #   viewTag: textInput
+        #   contentType: text
+        #   placeholder: Write here
+        #   dataKey: newTextMessage.document.name.data.text
+        #   style:
+        #     textAlign:
+        #       x: left
+        #     fontSize: '14'
+        #     left: '0.1'
+        #     top: '0.8'
+        #     width: '0.8'
+        #     height: '0.08'
+        #     borderWidth: '1'
+        #     border:
+        #       style: '2'
+        # - type: button
+        #   text: Send
+        #   onClick:
+        #     - actionType: evalObject
+        #       object:
+        #         - "=..newTextMessage.docAPI.store": ''
+        #         - "..newTextMessage.document.name.data.text@": ''
+        #         - "=.builtIn.object.clear":
+        #             dataIn:
+        #               object: "=..newTextMessage.document.name.data.text"
+        #     - "=..onNewMessageToDisplay"
+        #     - actionType: builtIn
+        #       funcName: clearText
+        #       viewTag: textInput
+        #   style:
+        #     color: '0xffffffff'
+        #     fontSize: '16'
+        #     fontStyle: bold
+        #     left: '0.1'
+        #     top: '0.9'
+        #     width: '0.25'
+        #     height: '0.07'
+        #     backgroundColor: '0x388eccff'
+        #     border:
+        #       style: '1'
+        #     display: inline
+        #     textAlign:
+        #       x: center
+        #       y: center
+        # - type: button
+        #   text: Upload
+        #   contentType: file
+        #   onClick:
+        #     - actionType: evalObject
+        #       object:
+        #         - actionType: openDocumentManager
+        #           dataObject: BLOB
+        #           dataKey: newFileMessage.document.name.data
+        #         - "=..newFileMessage.docAPI.store": ''
+        #     - =..onNewMessageToDisplay: ""
+        #   style:
+        #     color: '0xffffffff'
+        #     fontSize: '16'
+        #     fontStyle: bold
+        #     left: '0.55'
+        #     top: '0.9'
+        #     width: '0.25'
+        #     height: '0.07'
+        #     backgroundColor: '0x388eccff'
+        #     border:
+        #       style: '1'
+        #     display: inline
+        #     textAlign:
+        #       x: center
+        #       y: center

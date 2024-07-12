@@ -1,0 +1,83 @@
+[
+  {
+    "COD": {
+      "amount": "5.5",
+      "currency": "USD",
+      "payment_method": "CASH"
+    },
+    "alcohol": {
+      "contains_alcohol": true,
+      "recipient_type": "licensee"
+    },
+    "ancillary_endorsement": "FORWARDING_SERVICE_REQUESTED",
+    "authority_to_leave": true,
+    "billing": {
+      "account": "string",
+      "country": "string",
+      "participation_code": "string",
+      "type": "SENDER",
+      "zip": "string"
+    },
+    "bypass_address_validation": true,
+    "carbon_neutral": true,
+    "carrier_hub_id": "string",
+    "carrier_hub_travel_time": 0,
+    "container_type": "string",
+    "critical_pull_time": "string",
+    "customer_branch": "string",
+    "customer_reference": {
+      "prefix": "string",
+      "value": "string"
+    },
+    "dangerous_goods": {
+      "biological_material": {
+        "contains": true
+      },
+      "contains": true,
+      "lithium_batteries": {
+        "contains": true
+      }
+    },
+    "dangerous_goods_code": "01",
+    "delivery_instructions": "string",
+    "dept_number": {
+      "prefix": "string",
+      "value": "string"
+    },
+    "dry_ice": {
+      "contains_dry_ice": true,
+      "weight": "string"
+    },
+    "fulfillment_center": "string",
+    "insurance": {
+      "amount": "5.5",
+      "content": "string",
+      "currency": "USD",
+      "provider": "FEDEX"
+    },
+    "invoice_number": {
+      "prefix": "string",
+      "value": "string"
+    },
+    "is_return": true,
+    "lasership_attrs": "TwoPersonDelivery",
+    "lasership_declared_value": "string",
+    "po_number": {
+      "prefix": "string",
+      "value": "string"
+    },
+    "preferred_delivery_timeframe": "10001200",
+    "premium": true,
+    "qr_code_requested": true,
+    "reference_1": "string",
+    "reference_2": "string",
+    "request_retail_rates": true,
+    "return_service_type": "PRINT_AND_MAIL",
+    "rma_number": {
+      "prefix": "string",
+      "value": "string"
+    },
+    "saturday_delivery": true,
+    "signature_confirmation": "STANDARD"
+  }
+]

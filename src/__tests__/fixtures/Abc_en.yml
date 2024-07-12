@@ -1,0 +1,116 @@
+# This page is customized for unit tests to target all use cases
+Abc:
+  init:
+    - ..retrieveVertex.id@: TzAgiLambwoa3nmzImwmmyy==
+    - ..retrieveVertex.id2@: =..retrieveVertex.id
+    - =.builtIn.string.concat:
+        dataIn:
+          - "uid like '%"
+          - =..formData.countryCode
+          - " "
+          - =..formData.phoneNumber
+          - "'"
+        dataOut: Abc.rvCondition
+  retrieveVertex:
+    id: ''
+    id2: ''
+    response: ""
+    vertex:
+      id: =..tempProfile.email
+      _nonce: =.Global._nonce
+    vertexAPI:
+      get:
+        api: rv
+        dataIn: Abc.retrieveVertex.vertex
+        dataOut: Abc.retrieveVertex.response
+  rvCondition: ''
+  getVertex:
+    response: ""
+    vertex:
+      .Vertex: ""
+      xfname: none
+      type: 1
+      sCondition: =..rvCondition
+    vertexAPI:
+      get:
+        api: rv
+        dataIn: Abc.getVertex.vertex
+        dataOut: Abc.getVertex.response
+  genderList:
+    - key: gender
+      value: Female
+    - key: gender
+      value: Male
+    - key: gender
+      value: Unknown
+  tempProfile:
+    firstName: Bob
+    lastName: Tran
+    age: 30
+    email: podcast@gmail.com
+    gender: .Podcast.genderList.2.value
+  thisIsTrue: 'true'
+  thisIsAlsoTrue: true
+  thisIsFalse: 'false'
+  thisIsAlsoFalse: false
+  shop:
+    name: walmart
+    location: ..shop.tempLocation
+    tempLocation: ..shop.actions.1.emit.dataKey.var1
+    numEmployees: 18
+    traverseMe:
+      children:
+        - type: view
+          greeting: good morning!
+          children:
+            - type: scrollView
+              children:
+                - type: label
+                  text: ___.greeting
+    actions:
+      - actionType: builtIn
+        funcName: goBack
+        wait: true
+      - emit:
+          actions:
+            - ''
+          dataKey:
+            var1: ..shop.actions.0.funcName
+  items:
+    - type: shirt
+      tag: .Abc.shop.location
+      ..shop.actions.0: ''
+  labelText: ..shop.items.0.tag
+  components:
+    - .BaseHeader3: null
+    - .HeaderLeftButton: null
+    - type: label
+      text: .Abc.labelText # final result --> "goBack"
+      onClick:
+        - =.builtIn.string.equal:
+              dataIn:
+                string1: ''
+                string2: rice
+              dataOut: hello
+    - type: image
+      path:
+        if:
+          - =.builtIn.string.equal:
+              dataIn:
+                string1: Bob
+                string2: ..tempProfile.firstName
+          - Abc.tempProfile.email
+          - ..tempProfile.email
+    - type: button
+      onClick:
+        - actionType: evalObject
+          object:
+            - =..getVertex.vertexAPI.get: ""
+            - if:
+                - =..getVertex.response.vertex.0.id
+                - actionType: popUp
+                  popUpView: existUser
+                  wait: true
+                - .Global.newAccountFlag@: "1"
+        - actionType: evalObject
+          object: ..save

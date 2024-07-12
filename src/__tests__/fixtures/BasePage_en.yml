@@ -1,0 +1,95 @@
+BasePage:
+  pageNumber: "0"
+HeaderTitle2:
+  type: label
+  text: =..title
+BaseHeader3:
+  type: header
+  children:
+    - type: button
+      text: =..title
+HeaderLeftButton:
+  type: button
+  onClick:
+    - actionType: builtIn
+      funcName: goBack
+  children:
+    - type: image
+      path: backWhiteArrow.png
+    - type: label
+      text: Back
+LeftBackButton:
+  type: button
+  onClick:
+    - actionType: builtIn
+      funcName: goBack
+  children:
+    - type: image
+      path: backWhiteArrow.png
+    - type: label
+      text: Back
+BaseList:
+  type: list
+  contentType: listObject
+  iteratorVar: itemObject
+  style:
+    width: "1"
+    left: "0"
+BaseListItem:
+  type: listItem
+  itemObject: ""
+ProgressCheckView:
+  type: popUp
+  style:
+    width: "1"
+    height: "1"
+    top: "0"
+    left: "0"
+  children:
+    - type: view
+      viewTag: progressCheckView
+      message: "loading"
+      imgPath: zhuanquan.gif
+      children:
+        - type: image
+          path: __.imgPath
+          style:
+            left: '0.2'
+            width: '0.4'
+            top: '0.03'
+        - type: label
+          text: __.message
+          text2: _.text3 # "v'
+          text3: "v"
+          text4: __.children.1.text # "ok"
+          style:
+            .LabelStyle:
+              left: "0.01"
+              top: "0.21"
+              width: "0.78"
+              height: "0.06"
+              color: "0x000000"
+              fontSize: "2.5vh"
+              fontWeight: "350"
+              display: inline
+              # fontStyle: "bold"
+              fontFamily: "sans-serif"
+              textAlign:
+                x: center
+                y: center
+HeaderLeftButton1:
+  type: button
+  onClick:
+    - actionType: builtIn
+      funcName: goBack
+      reload: true
+  children:
+    - type: image
+      path: backWhiteArrow.png
+    - type: label
+      text: Back
+PasswordRecoveryHelperTitle:
+  type: view
+  children:
+    - type: label
+      text: __.text1

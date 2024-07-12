@@ -1,0 +1,37 @@
+{
+  "adcfdddf8ec64b84ad22772bce3ea37a": {
+    "amount": "5.5",
+    "amount_local": "5.5",
+    "arrives_by": {},
+    "attributes": ["BESTVALUE"],
+    "carrier_account": "078870331023437cb917f5187429b093",
+    "currency": "USD",
+    "currency_local": "USD",
+    "duration_terms": "Delivery in 1 to 3 business days",
+    "estimated_days": 2,
+    "included_insurance_price": "1.05",
+    "messages": [
+      {
+        "code": "string",
+        "source": "UPS",
+        "text": "RatedShipmentWarning: User Id and Shipper Number combination is not qualified to receive negotiated rates."
+      }
+    ],
+    "object_created": "2019-08-24T14:15:22Z",
+    "object_id": "adcfdddf8ec64b84ad22772bce3ea37a",
+    "object_owner": "pp@gmail.com",
+    "provider": "USPS",
+    "provider_image_200": "https://cdn2.goshippo.com/providers/200/USPS.png",
+    "provider_image_75": "https://cdn2.goshippo.com/providers/75/USPS.png",
+    "servicelevel": {
+      "extended_token": "string",
+      "name": "Priority Mail Express",
+      "parent_servicelevel": "string",
+      "terms": "string",
+      "token": "usps_priority_express"
+    },
+    "shipment": "adcfdddf8ec64b84ad22772bce3ea37a",
+    "test": true,
+    "zone": "1"
+  }
+}

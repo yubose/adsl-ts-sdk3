@@ -1,0 +1,38 @@
+apiHost: albh2.aitmed.io
+apiPort: '443'
+webApiHost: apiHost
+appApiHost: apiHost
+connectiontimeout: '5'
+loadingLevel: 1
+debug:
+  pathNotFound:
+    return: pathName # ""
+    log: console # toast, none or undefined
+  apiCheck:
+    unEvolvedValue: stop
+    log: toast # none or undefined
+viewWidthHeightRatio:
+  min: 0.56
+  max: 0.7
+web:
+  cadlVersion:
+    stable: 0.7d
+    test: 0.7d
+ios:
+  cadlVersion:
+    stable: 0.7d
+    test: 0.7d
+android:
+  cadlVersion:
+    stable: 0.7d
+    test: 0.7d
+cadlBaseUrl: http://127.0.0.1:3000/
+cadlMain: cadlEndpoint.yml
+timestamp: 5272021
+myBaseUrl: http://127.0.0.1:3000/
+keywords:
+  - telemedicine
+
+
+
+

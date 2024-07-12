@@ -1,0 +1,82 @@
+{
+  "canada_post": {
+    "account_id": "shippo_canada_post_account",
+    "active": true,
+    "carrier": "canada_post",
+    "carrier_images": {
+      "75": "https://shippo-static-v2.s3.amazonaws.com/providers/75/canada_post.png",
+      "200": "https://shippo-static-v2.s3.amazonaws.com/providers/200/canada_post.png"
+    },
+    "carrier_name": "Canada Post",
+    "is_shippo_account": true,
+    "metadata": "",
+    "object_id": "63271c9cf9254238878e76919674d02d",
+    "object_owner": "christopher@aitmed.com",
+    "parameters": {},
+    "test": true
+  },
+  "chronopost": {
+    "account_id": "shippo_chronopost_account",
+    "active": true,
+    "carrier": "chronopost",
+    "carrier_images": {
+      "75": "https://shippo-static-v2.s3.amazonaws.com/providers/75/chronopost.png",
+      "200": "https://shippo-static-v2.s3.amazonaws.com/providers/200/chronopost.png"
+    },
+    "carrier_name": "Chronopost",
+    "is_shippo_account": true,
+    "metadata": "",
+    "object_id": "1bc0877731214255a8847821d5700fd8",
+    "object_owner": "christopher@aitmed.com",
+    "parameters": {},
+    "test": true
+  },
+  "colissimo": {
+    "account_id": "shippo_colissimo_account",
+    "active": true,
+    "carrier": "colissimo",
+    "carrier_images": {
+      "75": "https://shippo-static-v2.s3.amazonaws.com/providers/75/colissimo.png",
+      "200": "https://shippo-static-v2.s3.amazonaws.com/providers/200/colissimo.png"
+    },
+    "carrier_name": "Colissimo",
+    "is_shippo_account": true,
+    "metadata": "",
+    "object_id": "f35c6128a7ae4de2b2cbfe0b78a3d248",
+    "object_owner": "christopher@aitmed.com",
+    "parameters": {},
+    "test": true
+  },
+  "correos": {
+    "account_id": "shippo_correos_account",
+    "active": true,
+    "carrier": "correos",
+    "carrier_images": {
+      "75": "https://shippo-static-v2.s3.amazonaws.com/providers/75/correos.png",
+      "200": "https://shippo-static-v2.s3.amazonaws.com/providers/200/correos.png"
+    },
+    "carrier_name": "Correos",
+    "is_shippo_account": true,
+    "metadata": "",
+    "object_id": "1befbcb1683d41c6aaf0114acaa898f5",
+    "object_owner": "christopher@aitmed.com",
+    "parameters": {},
+    "test": true
+  },
+  "couriersplease": {
+    "account_id": "shippo_couriersplease_account",
+    "active": true,
+    "carrier": "couriersplease",
+    "carrier_images": {
+      "75": "https://shippo-static-v2.s3.amazonaws.com/providers/75/couriersplease.png",
+      "200": "https://shippo-static-v2.s3.amazonaws.com/providers/200/couriersplease.png"
+    },
+    "carrier_name": "CouriersPlease",
+    "is_shippo_account": true,
+    "metadata": "",
+    "object_id": "3cf7984a5ad945409a42b1c5c5762998",
+    "object_owner": "christopher@aitmed.com",
+    "parameters": {},
+    "test": true
+  }
+}

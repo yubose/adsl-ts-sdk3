@@ -1,0 +1,307 @@
+VoidObj: vVoOiIdD # {}
+EmptyObj: "" # {""} FALSE
+EcosObj:
+  id: "" # base64 id
+  name: "" # JSON string
+  type: "0" # data type
+  ctime: "0" # Unix_TimeStamp when data created.
+Vertex:
+  .EcosObj: "" # inherit an object value only, not the key
+  uid: ""
+  pk: ""
+  esk: ""
+  deat: ""
+VertexAPI:
+  get:
+    api: rv
+  store:
+    api: cv
+Edge:
+  .EcosObj: ""
+  subtype: ""
+  bvid: ""
+  evid: ""
+  ctime: ""
+  tage: ""
+EdgeAPI:
+  get:
+    api: re
+    xfname: bvid
+    maxcount: "1"
+  store:
+    # create or update
+    api: ce
+Document:
+  .EcosObj: ""
+  eid: "" #EDGE ID
+  fid: "" #
+  subtype:
+    isOnServer: "1" # 1 ECOS server and limited size after compression under 32k;  0  S3
+    isZipped: auto # 0 not gziped  1  gziped
+    isBinary: "0" # 0 Base64       1  binary
+    isEncryped: "0" #0 no         1  encryped
+    isExtraKeyNeeded: "0" #0 no   1  yes
+    isEditable: "0" #0  no        1  yes
+    isCached: "1"
+    applicationDataType: "0" #0 data
+    mediaType: "0" # 0 others
+    size: auto
+DocAPI:
+  get:
+    api: rd
+    ids: "" #
+    xfname: "" # default is "id", optional "eid", "fid"
+    type: "0" # 0 data application data type 0 - 1023
+    maxcount: "1" # default is 20, max 1000
+  store:
+    api: cd
+Message:
+  avatar: "https://public.aitmed.com/avatar/JohnDoe.jpg"
+  to: ""
+  from: =.Global.currentUser.name.firstName # evaluate when access
+  createDate: ""
+  createTime: ""
+  subject: "A Subject"
+  content: "The message"
+  applicationLink: ""
+Const:
+  profile: "1"
+  w9: "101"
+  workComp: "102"
+  share: "103"
+  contact: "104"
+ErrorMessage: ""
+DataCache:
+  loadingDateTime: "0"
+  expireTime: "24hr" # need reload
+Global:
+  ecosDocObj: ""
+  globalRegister:
+    - type: register
+      onEvent: onNotificationClicked
+      emit:
+        dataKey:
+          var: notificationID
+        actions:
+          - =.builtIn.string.concat:
+              dataIn:
+                - "="
+                - "."
+                - "NotificationMap."
+                - $var
+                - ".name"
+                - ".notification"
+                - ".onClickLandingPage"
+              dataOut: NotificationMap.notificationGoto
+          - actionType: evalObject
+            object:
+              - goto: =.NotificationMap.notificationGoto
+    - type: register
+      onEvent: FCMOnTokenReceive
+      emit:
+        dataKey:
+          var: onEvent
+        actions:
+          # the token you just got back from Firebase
+          - =.builtIn.FCM.getFCMToken:
+              dataIn:
+                token: $var
+              dataOut: FirebaseToken.edge.name.accessToken
+          - =.builtIn.FCM.getAPPID:
+              dataIn:
+                appName: =.AppName
+              dataOut: FirebaseToken.edge.evid
+          - =.builtIn.FCM.getFCMTokenSHA256Half:
+              dataIn:
+                token: $var
+              dataOut: FirebaseToken.edge.refid
+          - =.FirebaseToken.edgeAPI.store
+    - type: register
+      onEvent: onNewEcosDoc # will be automatically invoked when receive a message
+      emit:
+        dataKey:
+          var: did
+        actions:
+          - =.builtIn.ecos.getDoc:
+              dataIn:
+                docId: $var
+              dataOut: Global.ecosDocObj
+          - if:
+              - =.builtIn.utils.isOnPage:
+                  dataIn: MeetingChat
+              - =.MeetingChat.onNewMessageToDisplay
+              - continue
+          - if:
+              - =.builtIn.string.equal:
+                  dataIn:
+                    string1: =.Global.ecosDocObj.doc.0.type
+                    string2: 16777472 # one click invite doc type
+              - - =.builtIn.phoneService.bringAppToForeground
+                - =.builtIn.phoneService.startVibrate
+                - =.builtIn.phoneService.startRingtone
+                - goto: MeetingRoomInvited
+              - continue
+  newAccountFlag: "1"
+  currentDateTime: =.builtIn.currentDateTime # long integer of Unix_TimeStamp in millsecond
+  currentUser:
+    response: null
+    dataCache:
+      .DataCache: ""
+      expireTime: "2hr"
+    vertex:
+      .Vertex: ""
+      name:
+        userName: ""
+        firstName: ""
+        lastName: ""
+        fullName: ""
+    vertexAPI:
+      .VertexAPI: ""
+      store:
+        api: cv
+        dataIn: Global.currentUser.vertex
+        dataOut: Global.currentUser.response
+    JWT: ""
+  actingUser:
+    DataCache:
+      expireTime: "2hr"
+    vertex: .Vertex #get : # loginUser refer to the login page
+  updateJwt:
+    - =.builtIn.date.currentDateTime:
+        dataOut: Global.currentDateTime
+    - =.builtIn.string.concat:
+        dataIn:
+          - =.Global.jwt.edge.bvid
+          - " "
+          - =.Global.currentDateTime
+        dataOut: Global.jwtMessage
+    - =.builtIn.eccNaCl.signature:
+        dataIn:
+          message: =.Global.jwtMessage
+          sk: =.Global.currentUser.vertex.sk
+          eskSign: =.Global.sigVertexResp.name.eskSign
+        dataOut: Global.jwt.edge.name.sig
+    - .Global.jwt.edge.name.ctime@: =.Global.currentDateTime
+    - =.Global.jwt.edgeAPI.store: ""
+  # Store the Vertex contains Sig, and use this data Model for the signature generation
+  sigVertexResp: ""
+  # create the message for the concat function, and we will put this into 1031 name
+  jwtMessage: ""
+  jwtSig: ""
+  jwt:
+    edge:
+      .Edge: ""
+      type: 1031
+      id: ""
+      name:
+        ctime: ""
+        sig: ""
+      xfname: "bvid"
+      bvid: =.SignIn.loginNewDevice.response.edge.deat.user_id
+      evid: =.FirebaseToken.edge.evid
+    edgeAPI:
+      store:
+        api: ce
+        dataIn: Global.jwt.edge
+  rootRoomInfo:
+    response: ""
+    edge:
+      .Edge: ""
+      type: 40000
+      bvid: .Global.currentUser.vertex.id
+      name:
+        title: "New room"
+        videoProvider: .Global.currentUser.vertex.name.userName
+    edgeAPI:
+      .EdgeAPI: ""
+      store:
+        api: ce
+        dataKey: Global.rootRoomInfo.edge
+  profile:
+    document: ""
+  contact:
+    document:
+      name:
+        data:
+          firstName: ""
+          lastName: ""
+          phoneNumber: ""
+  phoneNumber: ""
+  _nonce: 0
+  VideoChatObjStore:
+    reference:
+      edge: ""
+  DocReference:
+    document: ""
+  DocChat:
+    document: ""
+  DocProfile:
+    document: ""
+  popUpMessage: ""
+  timer: 0
+  timeScondition: ""
+  inboxContact: ""
+  email:
+    id: ""
+    document: ""
+  helperUser:
+    vertex: ""
+  token: ""
+CountryCode:
+  - "+1" #US Canada
+  - "+52" #Mexico
+  - "+86" #China
+  - "+965" #Kuwait
+DocType:
+  PubProfile: "256" # 0x100
+  Profile: "257" #  0x101private, 1
+  UploadProfile: "258" # 0x102 profile+public+favorite is used for store avarta image
+  Contact: "513" # 0x201, 2 1=private
+  ContactFav: "515" # 0x203 3 0x200 contact, 0x2=favorite|private
+  GetAllContact: "type in (513,515)"
+  GetAllDocument: "D.type=1025"
+  GetFavContact: "type=515"
+  UploadFile: "1025" # 4<<8+1 4 private uploaded file
+  InboxMessage: "1281" # 5<<8+1
+  PasswordRecovery: "1282" # 5<<8 +2
+  PasswordHelper: "1283" # 5<<8 + 3
+  MeetingNote: "1537" # 6<<8+1 6
+  Index: "1793" # 7<<8 + 1 7
+  PatientChart: "25601" # 0x6401 100<<8+1
+  VitalSigns: "28161" # 0x6e01 110<<8+1
+  VitalQuestionnaire: "30721" # 0x7801 120<<8+1
+  MedicalRecord: "33281" # 0x8201  130<<8+1
+  doctorProfile: "35841" #0x8c01 140<<8+1
+  businessProfile: "38401" #0x9601 150<<8+1
+  covid19Questionnair: "40961" # 0xa001 160<<8+1
+  UserAvatar: "40960" #0xA000 160<<8
+  UserNationalProviderNumber: "43521" #0xAA01  170<<8+1
+  UserLicenseNumber: "46081" #0xB401  180<<8+1
+  UserDEA: "48641" #0xBE01  190<<8+1
+  UserSignature: "51201" #0xC801  200<<8+1
+  License: "56321" #0XDC01 220<<8+1
+  Intake3Signature: "53761" #210<<8+1
+  F_IDCard: "58881" #230<<8+1
+  Covid19Questionnaire: "61441" # 0xf001 240<<8+1
+  daySchedule: ""
+  annex: "66561" #260<<8+1
+  Attachment: "69121" #0x10e01  270<<8+1
+  F_InsuranceCard: "71681" #280<<8+1
+  B_InsuranceCard: "74241" #290<<8+1
+  Intake4Signature: "76801" #300<<8+1
+  DocumentSignature: "89601"
+EdgeType:
+  ContactSupport: "2020" # 0x7E4
+  pa:Feedback: "20100"
+  Feedback: "1090"
+  WaitingRoom: "40000" # 0xC350
+  InviteInfo: "1053" # 0x41D
+  doctorAndPatientEdge: "10140"
+  InviteInbox: "1050"
+  Accept: "1060"
+  Refuse: "1052"
+  Email: "10002" # 250<<8+1     10002
+  Folder: "66560" # 260<<8       10001
+  GetMyEdge: "E.type>9999 AND E.type<40001"
+VertexType:
+  User: "1" # 0x1

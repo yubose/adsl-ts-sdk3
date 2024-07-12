@@ -1,0 +1,514 @@
+[
+  {
+    "token": "airterra",
+    "carrierName": "Airterra"
+  },
+  {
+    "token": "apc_postal",
+    "carrierName": "APC Postal"
+  },
+  {
+    "token": "apg",
+    "carrierName": "APG"
+  },
+  {
+    "token": "aramex",
+    "carrierName": "Aramex"
+  },
+  {
+    "token": "asendia_us",
+    "carrierName": "Asendia US"
+  },
+  {
+    "token": "australia_post",
+    "carrierName": "Australia Post (also used for Startrack)"
+  },
+  {
+    "token": "axlehire",
+    "carrierName": "Axlehire"
+  },
+  {
+    "token": "better_trucks",
+    "carrierName": "BetterTrucks"
+  },
+  {
+    "token": "borderguru",
+    "carrierName": "BorderGuru"
+  },
+  {
+    "token": "boxberry",
+    "carrierName": "Boxberry"
+  },
+  {
+    "token": "bring",
+    "carrierName": "Bring (also used for Posten Norge)"
+  },
+  {
+    "token": "canada_post",
+    "carrierName": "Canada Post"
+  },
+  {
+    "token": "cdl",
+    "carrierName": "CDL"
+  },
+  {
+    "token": "chronopost",
+    "carrierName": "Chronopost"
+  },
+  {
+    "token": "collect_plus",
+    "carrierName": "CollectPlus"
+  },
+  {
+    "token": "correios_br",
+    "carrierName": "CorreiosBR"
+  },
+  {
+    "token": "correos_espana",
+    "carrierName": "Correos España"
+  },
+  {
+    "token": "couriersplease",
+    "carrierName": "Couriers Please"
+  },
+  {
+    "token": "colissimo",
+    "carrierName": "Colissimo"
+  },
+  {
+    "token": "deutsche_post",
+    "carrierName": "Deutsche Post"
+  },
+  {
+    "token": "dhl_benelux",
+    "carrierName": "DHL Benelux"
+  },
+  {
+    "token": "dhl_ecommerce",
+    "carrierName": "DHL eCommerce"
+  },
+  {
+    "token": "dhl_express",
+    "carrierName": "DHL Express"
+  },
+  {
+    "token": "dhl_germany_c2c",
+    "carrierName": "DHL Germany C2C"
+  },
+  {
+    "token": "dhl_germany",
+    "carrierName": "DHL Germany"
+  },
+  {
+    "token": "dpd_germany",
+    "carrierName": "DPD GERMANY"
+  },
+  {
+    "token": "dpd",
+    "carrierName": "DPD"
+  },
+  {
+    "token": "dpd_uk",
+    "carrierName": "DPD UK"
+  },
+  {
+    "token": "estafeta",
+    "carrierName": "Estafeta"
+  },
+  {
+    "token": "fastway_australia",
+    "carrierName": "Aramex"
+  },
+  {
+    "token": "fedex",
+    "carrierName": "FedEx"
+  },
+  {
+    "token": "globegistics",
+    "carrierName": "Globegistics"
+  },
+  {
+    "token": "gls_us",
+    "carrierName": "GLS US"
+  },
+  {
+    "token": "gophr",
+    "carrierName": "Gophr"
+  },
+  {
+    "token": "gso",
+    "carrierName": "GSO"
+  },
+  {
+    "token": "hermes_germany_b2c",
+    "carrierName": "Hermes Germany B2C"
+  },
+  {
+    "token": "hermes_uk",
+    "carrierName": "Evri UK"
+  },
+  {
+    "token": "hongkong_post",
+    "carrierName": "Hongkong Post"
+  },
+  {
+    "token": "lasership",
+    "carrierName": "LaserShip"
+  },
+  {
+    "token": "lso",
+    "carrierName": "LSO"
+  },
+  {
+    "token": "mondial_relay",
+    "carrierName": "Mondial Relay"
+  },
+  {
+    "token": "new_zealand_post",
+    "carrierName": "New Zealand Post (also used for Pace and CourierPost)"
+  },
+  {
+    "token": "nippon_express",
+    "carrierName": "Nippon Express"
+  },
+  {
+    "token": "ontrac",
+    "carrierName": "OnTrac"
+  },
+  {
+    "token": "orangeds",
+    "carrierName": "OrangeDS"
+  },
+  {
+    "token": "parcelforce",
+    "carrierName": "Parcelforce"
+  },
+  {
+    "token": "parcel",
+    "carrierName": "Parcel"
+  },
+  {
+    "token": "passport",
+    "carrierName": "Passport"
+  },
+  {
+    "token": "pcf",
+    "carrierName": "PCF"
+  },
+  {
+    "token": "poste_italiane",
+    "carrierName": "Poste Italiane"
+  },
+  {
+    "token": "posti",
+    "carrierName": "Posti"
+  },
+  {
+    "token": "purolator",
+    "carrierName": "Purolator"
+  },
+  {
+    "token": "royal_mail",
+    "carrierName": "Royal Mail"
+  },
+  {
+    "token": "rr_donnelley",
+    "carrierName": "ePost Global"
+  },
+  {
+    "token": "russian_post",
+    "carrierName": "Russian Post"
+  },
+  {
+    "token": "sendle",
+    "carrierName": "Sendle"
+  },
+  {
+    "token": "skypostal",
+    "carrierName": "SkyPostal"
+  },
+  {
+    "token": "stuart",
+    "carrierName": "Stuart"
+  },
+  {
+    "token": "swyft",
+    "carrierName": "Swyft"
+  },
+  {
+    "token": "uds",
+    "carrierName": "UDS (United Delivery Service)"
+  },
+  {
+    "token": "ups",
+    "carrierName": "UPS"
+  },
+  {
+    "token": "usps",
+    "carrierName": "USPS"
+  },
+  {
+    "token": "x_delivery",
+    "carrierName": "X Delivery (now Maergo)"
+  },
+  {
+    "token": "yodel",
+    "carrierName": "Yodel"
+  },
+  {
+    "token": "airterra",
+    "carrierName": "Airterra"
+  },
+  {
+    "token": "apc_postal",
+    "carrierName": "APC Postal"
+  },
+  {
+    "token": "apg",
+    "carrierName": "APG"
+  },
+  {
+    "token": "aramex",
+    "carrierName": "Aramex"
+  },
+  {
+    "token": "asendia_us",
+    "carrierName": "Asendia US"
+  },
+  {
+    "token": "australia_post",
+    "carrierName": "Australia Post (also used for Startrack)"
+  },
+  {
+    "token": "axlehire",
+    "carrierName": "Axlehire"
+  },
+  {
+    "token": "better_trucks",
+    "carrierName": "BetterTrucks"
+  },
+  {
+    "token": "borderguru",
+    "carrierName": "BorderGuru"
+  },
+  {
+    "token": "boxberry",
+    "carrierName": "Boxberry"
+  },
+  {
+    "token": "bring",
+    "carrierName": "Bring (also used for Posten Norge)"
+  },
+  {
+    "token": "canada_post",
+    "carrierName": "Canada Post"
+  },
+  {
+    "token": "cdl",
+    "carrierName": "CDL"
+  },
+  {
+    "token": "chronopost",
+    "carrierName": "Chronopost"
+  },
+  {
+    "token": "collect_plus",
+    "carrierName": "CollectPlus"
+  },
+  {
+    "token": "correios_br",
+    "carrierName": "CorreiosBR"
+  },
+  {
+    "token": "correos_espana",
+    "carrierName": "Correos España"
+  },
+  {
+    "token": "couriersplease",
+    "carrierName": "Couriers Please"
+  },
+  {
+    "token": "colissimo",
+    "carrierName": "Colissimo"
+  },
+  {
+    "token": "deutsche_post",
+    "carrierName": "Deutsche Post"
+  },
+  {
+    "token": "dhl_benelux",
+    "carrierName": "DHL Benelux"
+  },
+  {
+    "token": "dhl_ecommerce",
+    "carrierName": "DHL eCommerce"
+  },
+  {
+    "token": "dhl_express",
+    "carrierName": "DHL Express"
+  },
+  {
+    "token": "dhl_germany_c2c",
+    "carrierName": "DHL Germany C2C"
+  },
+  {
+    "token": "dhl_germany",
+    "carrierName": "DHL Germany"
+  },
+  {
+    "token": "dpd_germany",
+    "carrierName": "DPD GERMANY"
+  },
+  {
+    "token": "dpd",
+    "carrierName": "DPD"
+  },
+  {
+    "token": "dpd_uk",
+    "carrierName": "DPD UK"
+  },
+  {
+    "token": "estafeta",
+    "carrierName": "Estafeta"
+  },
+  {
+    "token": "fastway_australia",
+    "carrierName": "Aramex"
+  },
+  {
+    "token": "fedex",
+    "carrierName": "FedEx"
+  },
+  {
+    "token": "globegistics",
+    "carrierName": "Globegistics"
+  },
+  {
+    "token": "gls_us",
+    "carrierName": "GLS US"
+  },
+  {
+    "token": "gophr",
+    "carrierName": "Gophr"
+  },
+  {
+    "token": "gso",
+    "carrierName": "GSO"
+  },
+  {
+    "token": "hermes_germany_b2c",
+    "carrierName": "Hermes Germany B2C"
+  },
+  {
+    "token": "hermes_uk",
+    "carrierName": "Evri UK"
+  },
+  {
+    "token": "hongkong_post",
+    "carrierName": "Hongkong Post"
+  },
+  {
+    "token": "lasership",
+    "carrierName": "LaserShip"
+  },
+  {
+    "token": "lso",
+    "carrierName": "LSO"
+  },
+  {
+    "token": "mondial_relay",
+    "carrierName": "Mondial Relay"
+  },
+  {
+    "token": "new_zealand_post",
+    "carrierName": "New Zealand Post (also used for Pace and CourierPost)"
+  },
+  {
+    "token": "nippon_express",
+    "carrierName": "Nippon Express"
+  },
+  {
+    "token": "ontrac",
+    "carrierName": "OnTrac"
+  },
+  {
+    "token": "orangeds",
+    "carrierName": "OrangeDS"
+  },
+  {
+    "token": "parcelforce",
+    "carrierName": "Parcelforce"
+  },
+  {
+    "token": "parcel",
+    "carrierName": "Parcel"
+  },
+  {
+    "token": "passport",
+    "carrierName": "Passport"
+  },
+  {
+    "token": "pcf",
+    "carrierName": "PCF"
+  },
+  {
+    "token": "poste_italiane",
+    "carrierName": "Poste Italiane"
+  },
+  {
+    "token": "posti",
+    "carrierName": "Posti"
+  },
+  {
+    "token": "purolator",
+    "carrierName": "Purolator"
+  },
+  {
+    "token": "royal_mail",
+    "carrierName": "Royal Mail"
+  },
+  {
+    "token": "rr_donnelley",
+    "carrierName": "ePost Global"
+  },
+  {
+    "token": "russian_post",
+    "carrierName": "Russian Post"
+  },
+  {
+    "token": "sendle",
+    "carrierName": "Sendle"
+  },
+  {
+    "token": "skypostal",
+    "carrierName": "SkyPostal"
+  },
+  {
+    "token": "stuart",
+    "carrierName": "Stuart"
+  },
+  {
+    "token": "swyft",
+    "carrierName": "Swyft"
+  },
+  {
+    "token": "uds",
+    "carrierName": "UDS (United Delivery Service)"
+  },
+  {
+    "token": "ups",
+    "carrierName": "UPS"
+  },
+  {
+    "token": "usps",
+    "carrierName": "USPS"
+  },
+  {
+    "token": "x_delivery",
+    "carrierName": "X Delivery (now Maergo)"
+  },
+  {
+    "token": "yodel",
+    "carrierName": "Yodel"
+  }
+]

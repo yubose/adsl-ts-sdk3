@@ -1,0 +1,80 @@
+{
+  "8caf7fd7b6924643a1e9d027bf260c5a": {
+    "billing": {
+      "payments": []
+    },
+    "commercial_invoice_url": null,
+    "eta": null,
+    "label_url": "",
+    "messages": [
+      {
+        "code": "Quote",
+        "source": "USPS",
+        "text": "The given Rate can't be purchased because it's object_purpose is not PURCHASE."
+      }
+    ],
+    "metadata": "",
+    "object_created": "2023-09-05T23:53:14.425Z",
+    "object_id": "8caf7fd7b6924643a1e9d027bf260c5a",
+    "object_owner": "christopher@aitmed.com",
+    "object_state": "INVALID",
+    "object_updated": "2023-09-05T23:53:14.713Z",
+    "order": null,
+    "parcel": "bb3c5f8c6eec4ca4be04265f8ea0e5c3",
+    "qr_code_url": null,
+    "rate": "645acfdb1ec74b9c9502b3c99ac10b85",
+    "status": "ERROR",
+    "test": true,
+    "tracking_number": "",
+    "tracking_status": "UNKNOWN",
+    "tracking_url_provider": ""
+  },
+  "f4407d648441407597991de3b3135666": {
+    "billing": {
+      "payments": []
+    },
+    "commercial_invoice_url": null,
+    "eta": null,
+    "label_url": "https://deliver.goshippo.com/f4407d648441407597991de3b3135666.pdf?Expires=1725738022&Signature=MelMdcgWApN8NXYZwwNEdRkTM10N-DFzOlyv5s5Fr~QTHBLlQlsas~qYQUGy84tMho1kiWDos0ucG4I~RWZHZx9KWNNO4sYFa0gYvz2R2EXBudXmAQFPEr0zwl6QEpWiaSv32CasO9nprzHnAdN7a8qMjClQaQ1uqU~QyDDUlgZ~v8NkvboXwIN4mx1IrWkTXmqbxORn1H4uVBIvk-YpHm61o7ZApvD0XqKWr8RH5P-c27Bfh31Jl8HxY~qPFNIMWuZe2JcYocijg7f9Zt9IzXjT8VxPDBS7bRQETsp93V7avqgDo03onzcIFt0sQYTuIVFW5Djnowg2R~BogKk25g__&Key-Pair-Id=APKAJRICFXQ2S4YUQRSQ",
+    "messages": [],
+    "metadata": "",
+    "object_created": "2023-09-08T19:40:20.669Z",
+    "object_id": "f4407d648441407597991de3b3135666",
+    "object_owner": "christopher@aitmed.com",
+    "object_state": "VALID",
+    "object_updated": "2023-09-08T19:40:22.298Z",
+    "order": null,
+    "parcel": "119b07b9a7a44c3a912dc8b9a9305139",
+    "qr_code_url": null,
+    "rate": "3a6995fe9a644dde8a5f96069d8f98a9",
+    "status": "SUCCESS",
+    "test": true,
+    "tracking_number": "92055901755477000000000015",
+    "tracking_status": "UNKNOWN",
+    "tracking_url_provider": "https://tools.usps.com/go/TrackConfirmAction_input?origTrackNum=92055901755477000000000015"
+  },
+  "fb292082cf4540cb9e66458cb902e2c6": {
+    "billing": {
+      "payments": []
+    },
+    "commercial_invoice_url": null,
+    "eta": null,
+    "label_url": "https://deliver.goshippo.com/fb292082cf4540cb9e66458cb902e2c6.pdf?Expires=1725737881&Signature=PNXEzGBL4AbjdQ5Gf5qcQQn-Ahg-Y2uZ-ACpE7e8nqlab0hY9jHTiu22lsnjN8Y~7gdFbDxKIDoMSINQdGeU3-Ub460sEcORnU7EC0hL5BnFTEFg9AYWRYTMJjzuuKv5YhYRozZK4K3p2dncolgjaULS65IIxL4J0tiPcOrsr2YHcOcGArkw6QVq4UJeS8wsQ-bN4LQCH3SZDM16i1xFhXsM-OVFIKRYLGMinTSLwsdFTVYjeuOKsfrSP44x-Ms5tD3zT8ybayi1keyd609qDbmXCqFNlLf6J1-z2I5IlEUyeb0IMirHW9p2mWVDmRg819fEfpzJd899jLFarwa1CQ__&Key-Pair-Id=APKAJRICFXQ2S4YUQRSQ",
+    "messages": [],
+    "metadata": "",
+    "object_created": "2023-09-08T19:38:00.298Z",
+    "object_id": "fb292082cf4540cb9e66458cb902e2c6",
+    "object_owner": "christopher@aitmed.com",
+    "object_state": "VALID",
+    "object_updated": "2023-09-08T19:38:02.035Z",
+    "order": null,
+    "parcel": "cd2510b1e03b42d98d9b8beb970359c7",
+    "qr_code_url": null,
+    "rate": "d680d2b882d64b9cbe7d63f01f749134",
+    "status": "SUCCESS",
+    "test": true,
+    "tracking_number": "92055901755477000000000015",
+    "tracking_status": "UNKNOWN",
+    "tracking_url_provider": "https://tools.usps.com/go/TrackConfirmAction_input?origTrackNum=92055901755477000000000015"
+  }
+}

@@ -1,0 +1,157 @@
+//
+// AiTmed, Inc. (c) 2019
+//
+
+syntax = "proto3";
+
+package aitmed.ecos.v1beta1;
+
+option csharp_namespace = "Aitmed.Ecos.V1Beta1";
+option go_package = "ecos/v1beta1;ecosv1beta1";
+option java_multiple_files = true;
+option java_outer_classname = "EcosApiProto";
+option java_package = "com.aitmed.ecos.v1beta1";
+option objc_class_prefix = "AEX";
+option php_namespace = "Aitmed\\Ecos\\V1Beta1";
+
+// Data model: https://dbdiagram.io/d/5d8bf197ff5115114db4a2a0
+
+import "google/protobuf/field_mask.proto";
+import "ecos/v1beta1/types.proto";
+
+// EcosAPI provides operations on 3 fundamental tables, vertex, edge and doc.
+// APIs in EcosAPI should be considered as the low-level apis that are only called by wrapper SDKs.
+service EcosAPI {
+    // ce creates an edge record.
+    rpc ce (ceReq) returns (ceResp);
+    // re retrieves edge record(s) with given id(s).
+    rpc re (rxReq) returns (reResp);
+    // dx delete and archives any one kind of objects of (edge, vertex or doc).
+    rpc dx (dxReq) returns (dxResp);
+
+    // cv creates a vertex record.
+    rpc cv (cvReq) returns (cvResp);
+     // rv retrieves vertex record(s) with given id(s).
+    rpc rv (rxReq) returns (rvResp);
+
+    // cd creates a doc record.
+    rpc cd (cdReq) returns (cdResp);
+    // rd retrieves a doc record(s) with given id(s).
+    rpc rd (rxReq) returns (rdResp);
+}
+
+// Create Edge Request.
+message ceReq {
+    string jwt = 1;
+    google.protobuf.FieldMask pmask = 2;
+    google.protobuf.FieldMask rmask = 3;
+    Edge edge = 4;
+}
+
+// Create Edge Response
+message ceResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    Edge edge = 4;
+}
+
+// Retrieve any object request
+// Request id have to be the ids of the same kind
+// otherwise will drop any ids which are different from the first id in the list
+// Query/Search/Retrieve privileges are control by jwt.
+// id is one or many UUIDs which are compared with the x_field_name as xfname.
+// key is a string of search keys in boolean form such as
+//   (key1 & key2 | key3 | key4) & !key5 to search against xfname
+//   if key ends with "!", exact key matched is required.
+//   'key' could be in regular expression form
+// This API is used by Application Level SDK to implement more sophistical functions
+message rxReq {
+    string jwt = 1; // Required
+    google.protobuf.FieldMask pmask = 2;
+    google.protobuf.FieldMask rmask = 3;
+    int32 ObjType = 4; // Optional, default 0 for live object;1:for retired object and 2 of objects of EOD(End-Of-Life)
+    repeated bytes id = 5; // Optional
+    string xfname = 6; // id will be checked against xfname
+    int32 type = 7; // Optional if omitted, 0 is the default for all types.
+    string key = 8; // Optional if omitted, no string search will be done.
+    string sfname = 9; // Optional, comma-separated field names
+    bytes loid = 10; //Optional, if presented, its ObjType  should be matched with ObjType
+                    // it is used for paginate response. It is the last item from previous returned
+    int32 maxcount = 11; //maximum return item count, default 100, maximum allow should be limited to
+                        // 1000, this about minimum 256K payload on average.
+    string obfname = 12; //order by field names, is comma-separated field names.
+                        // if omitted, 'mtime' is assumed.
+    string sCondition = 13; // addition sql condition string.
+    bool asc = 14;  //return order in ascending order,
+                   //default asc is omitted for 'false' to imply descending order
+}
+
+// Retrive Edge Response
+message reResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    repeated Edge edge = 4;
+}
+
+// Retrive Vertex Response
+message rvResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    repeated Vertex vertex = 4;
+}
+
+// Retrieve Doc Resp.
+message rdResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    repeated Doc doc = 4;
+}
+
+// Delete any kind of objects Request
+message dxReq {
+    string jwt = 1;
+    repeated bytes id = 2;
+}
+
+// Delete any kind of objects Response
+message dxResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+}
+
+// Create Vertex Request
+message cvReq {
+    string jwt = 1;
+    google.protobuf.FieldMask pmask = 2;
+    google.protobuf.FieldMask rmask = 3;
+    Vertex vertex = 4;
+}
+
+// Create Vertex Response
+message cvResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    Vertex vertex = 4;
+}
+
+// Create Doc Request
+message cdReq {
+    string jwt = 1;
+    google.protobuf.FieldMask pmask = 2;
+    google.protobuf.FieldMask rmask = 3;
+    Doc doc = 4;
+}
+
+// Create Doc Resp.
+message cdResp {
+    string jwt = 1;
+    int32 code = 2;
+    string error = 3;
+    Doc doc = 4;
+}
